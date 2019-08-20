@@ -1,2 +1,2 @@
 # Angluar-Study
-To study Angluar.js
+To study Angular.js
