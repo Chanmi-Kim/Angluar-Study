@@ -9,15 +9,16 @@
      <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
      <link rel="stylesheet" href="css/todo.css">
      <script src="node_modules/angular/angular.min.js"></script>
-     <script src="js/todo.js"></script>
+     <!-- <script src="js/todo.js"></script> -->
+     <script src="js/app/app.js"></script>
+     <script src="js/controller/controller.js"></script>
+     <script src="js/directive/directive.js"></script>
 </head>
 
 <body>
 
      <div class="main" ng-app="todo" ng-controller="todoController">
-          <header>
-               <img src="images/angular_logo_s.png">
-          </header>
+          <todo-header></todo-header>
           <section>
 
                <!-- 1. 일반 태그 -->
@@ -26,34 +27,16 @@
 
                <!-- 2. 폼 태그 -->
                <!-- <input type="text" ng-model="num"> -->
+               
+               <!-- <pre>{{ items | json }}</pre> -->
 
-               <ul>
-                    <li ng-repeat="item in items | orderBy: '-regdate'">
-                         <table>
-                              <tr>
-                                   <td><input type="checkbox" ng-model="item.completed"></td>
-                                   <td ng-class="{'completed': item.completed}">
-                                        {{ item.title }}
-                                        <span class='regdate'>{{ item.regdate | date: 'yyyy-MM-dd HH:mm:ss' }}</span>
-                                   </td>
-                                   <td ng-click="remove(item)">
-                                        <span class="del glyphicon glyphicon-remove"></span>
-                                   </td>
-                              </tr>
-                         </table>
-                    </li>
-               </ul>
-
-               <form class="addForm" name="addForm" ng-submit="add(newTitle)">
-                    <div class="input-group">
-                         <input type="text" class="form-control" placeholder="할일을 입력하세요." ng-model="newTitle" minlength="3" autofocus>
-                         <span class="input-group-btn">
-                              <button class="btn btn-danger" type="submit">Add</button>
-                         </span>
-                    </div>
-                    <div ng-show="addForm.$invalid" class="alert alert-danger" style="margin-top: 10px;">입력값이 유효하지 않습니다.
-                    </div>
-               </form>
+               <!-- todoItems -->
+               <todo-items></todo-items>
+               
+               <todo-btns></todo-btns>
+               
+               <todo-form></todo-form>
+               
 
           </section>
 
