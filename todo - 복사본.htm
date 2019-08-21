@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Todo</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<script src="node_modules/angular/angular.min.js"></script>
+	<style>
+		.main {
+			border: 1px solid #ccc;
+			width: 400px;
+			margin: 20px auto;
+			box-shadow: 2px 2px 10px #aaa;
+			border-radius: 5px;
+			background-color: rgb(230, 230, 230);
+		}
+
+		.main header {
+			padding: 20px;
+		}
+
+		.main section ul {
+			list-style-type: none;
+			margin: 0px;
+			padding: 0px;
+		}
+
+		.main section ul li {
+			background-color: white;
+		}
+
+		.main section ul li .regdate {
+			font-size: 11px;
+			color: #999;
+			display: block;
+			padding-left: 3px;
+		}
+
+		.main section ul li table {
+			width: 100%;
+			border-top: 1px solid rgb(230, 230, 230);
+		}
+
+		.main section ul li table td {
+			text-align: center;
+		}
+
+		.main section ul li table td:nth-child(1) {
+			width: 30px;
+			border-right: 1px solid rgb(230, 230, 230);
+		}
+
+		.main section ul li table td:nth-child(2) {
+			width: 340px;
+			text-align: left;
+			padding: 10px 15px;
+		}
+
+		.main section ul li table td:nth-child(2) input {
+			border: 0px;
+			outline: none;
+		}
+
+		.main section ul li table td:nth-child(3) {
+			width: 30px;
+			cursor: pointer;
+			color: #777;
+		}
+
+		.main section .addForm {
+			padding: 15px;
+			border-top: 1px solid rgb(230, 230, 230);
+		}
+
+		.completed {
+			opacity: .3;
+		}
+
+		.btns {
+			margin: 15px 0px 0px 15px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="main" ng-app="todo" ng-controller="todoController">
+		<header>
+			<img src="images/angular_logo_s.png">
+		</header>
+		<section>
+
+			<ul>
+				<li>
+					<table>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td ng-class="{'completed': item.completed}">
+								<input type="text" ng-model="item.title">
+								<!-- {{ item.title }} -->
+								<span class='regdate'>{{ item.regdate | date: 'yyyy-MM-dd HH:mm:ss' }}</span>
+							</td>
+							<td ng-click="remove(item)">
+								<span class="del glyphicon glyphicon-remove"></span>
+							</td>
+						</tr>
+					</table>
+				</li>
+			</ul>
+
+			<div class="btns btn-group" role="group" aria-label="...">
+				<button type="button" class="btn btn-default" ng-click="myFilter={}">All</button>
+				<button type="button" class="btn btn-default" ng-click="myFilter={completed: false}">Active</button>
+				<button type="button" class="btn btn-default"
+					ng-click="myFilter={completed: true}">Completed</button>
+			</div>
+
+			<form class="addForm" name="addForm" ng-submit="add(newTitle)">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="할일을 입력하세요." ng-model="newTitle"
+						minlength="3" autofocus>
+					<span class="input-group-btn">
+						<button class="btn btn-danger" type="submit">Add</button>
+					</span>
+				</div>
+				<div ng-show="addForm.$invalid" class="alert alert-danger" style="margin-top: 10px;">입력값이 유효하지 않습니다.
+				</div>
+			</form>
+
+		</section>
+
+	</div>
+
+</body>
+
+</html>
