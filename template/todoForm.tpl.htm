@@ -1,0 +1,10 @@
+<form class="addForm" name="addForm" ng-submit="add(newTitle)">
+     <div class="input-group">
+          <input type="text" class="form-control" placeholder="할일을 입력하세요." ng-model="newTitle" minlength="3" autofocus>
+          <span class="input-group-btn">
+               <button class="btn btn-danger" type="submit">Add</button>
+          </span>
+     </div>
+     <div ng-show="addForm.$invalid" class="alert alert-danger" style="margin-top: 10px;">입력값이 유효하지 않습니다.
+     </div>
+</form>
