@@ -1,0 +1,90 @@
+필기.txt
+
+자바스크립트
+1. Vue.js
+2. React
+3. Angular
+
+D:\Class\angularjs_workspace
+
+
+Angular vs AngularJS
+- AngularJS : 1.0
+- Angular : 2.0 ~ 현재 버전
+
+AngularJS
+- 자바스크립트 프레임워크
+- 웹 페이지를 제작하는 프레임워크
+- 기존 방식(JavaScript, jQuery) > 틀 제공(생산성, 팀작업, 기타 등등)
+- SPA(Single Page Application) 제작에 용이함 > MVC 지원 > 앱 개발에 용이
+
+
+Node.js
+- 목적 : 서버에 동작하는 자바스크립트 환경
+- https://nodejs.org
+- $ node -v
+
+
+
+NPM, Node Packages Manager
+- Node가 사용하는 자바스크립트 패키지를 관리해주는 도구
+- 파이썬 : pip
+- 자바 : Maven
+- $ npm -v
+
+
+npm 사용 목적
+- 자바스크립트 라이브러리 or 패키지를 설치/삭제/배포 등을 하는 도구
+- 사용자 직접 관리에 비해 간편 and 표준화 가능(팀작업)
+
+
+npm 명령어
+1. 패키지 설치
+     - $ npm install 패키지명
+     - $ npm install 패키지명 --save
+     - $ npm install 패키지명@버전
+
+2. 패키지 확인
+     - $ npm list
+
+3. 패키지 삭제
+     - $ npm uninstall 패키지명
+
+4. 작업 환경 초기화
+     - 현재 작업에서 사용되는 패키지 정보를 관리 > package.json
+     - $ npm init
+
+5. 작업 환경 설치
+     - package.json 복사 > $ npm install
+
+6. 작업 환경 리셋  
+     - dependencis 삭제 or package.json 다시 삭제
+     - $ npm prune //사용 안하는 패키지 삭제
+     - $ npm update
+
+7. 패키지 정보 확인
+     - $ npm info(view) 패키지명
+
+8. 패키지 버전
+     - jquery-1.12.4
+     - 첫번째 자리
+          - 1
+          - Major Version
+          - 이전 버전과 호환이 안될만큼 새로워 질 때(호환이 가능하기도 함)
+     - 두번째 자리
+          - 12
+          - Minor Version
+          - 기존 버전과 호환은 되면서 새로운 기능이 추가될 때
+     - 세번째 자리
+          - 4
+          - Patch Version
+          - 에러 잡은 버전
+     
+
+9. 수업 환경
++-- angular@1.7.8
++-- bootstrap@3.4.1
+`-- jquery@1.12.4
+
+
+
