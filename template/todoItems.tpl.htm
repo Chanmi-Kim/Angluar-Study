@@ -1,0 +1,18 @@
+<!-- template/todoItems.tpl.htm -->
+<ul>
+     <li ng-repeat="item in items | orderBy: '-regdate' | filter: myFilter">
+          <table>
+               <tr>
+                    <td><input type="checkbox" ng-model="item.completed"></td>
+                    <td ng-class="{'completed': item.completed}">
+                         <input type="text" ng-model="item.title">
+                         <!-- {{ item.title }} -->
+                         <span class='regdate'>{{ item.regdate | date: 'yyyy-MM-dd HH:mm:ss' }}</span>
+                    </td>
+                    <td ng-click="remove(item)">
+                         <span class="del glyphicon glyphicon-remove"></span>
+                    </td>
+               </tr>
+          </table>
+     </li>
+</ul>
