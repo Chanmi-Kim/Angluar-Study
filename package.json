@@ -12,6 +12,6 @@
   "dependencies": {
     "angular": "^1.7.9",
     "bootstrap": "^3.4.1",
-    "jquery": "^3.4.0" //<dependency>
+    "jquery": "^3.5.0" //<dependency>
   }
 }
